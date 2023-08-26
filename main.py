@@ -38,7 +38,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://post_jghk_user:h4eZ7f7y24h
 db = SQLAlchemy()
 db.init_app(app)
 
-# TODO: Create a User table for all your registered users. 
+ 
 class Credentials(UserMixin,db.Model):
     __tablename__ = "user_data"
     id = id = db.Column(db.Integer, primary_key=True)
@@ -91,7 +91,7 @@ with app.app_context():
     db.create_all()
 
 
-# TODO: Use Werkzeug to hash the user's password when creating a new user.
+
 @app.route('/register', methods=['POST','GET'])
 def register():
     form = CreateUserForm()
